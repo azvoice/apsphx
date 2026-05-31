@@ -384,6 +384,259 @@ h2.section-title .es {
 }
 
 /* ============================================================
+   FEATURED VIDEOS (bilingual)
+   ============================================================ */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 44px 48px;
+  margin-top: 54px;
+}
+@media (max-width: 680px) { .video-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+.video-card { text-align: center; }
+
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(201, 162, 74, 0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 18px 50px rgba(3, 16, 30, 0.45);
+}
+.video-frame iframe,
+.video-frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  object-fit: cover;
+}
+
+.video-label {
+  font-family: var(--font-display);
+  font-size: 24px;
+  letter-spacing: 0.04em;
+  color: var(--pearl);
+  margin-top: 22px;
+}
+.video-label .es {
+  display: block;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 17px;
+  color: var(--mute);
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+/* ============================================================
+   DRESS CODE
+   ============================================================ */
+.dress-code { padding: 100px 0; }
+.dress-intro {
+  max-width: 760px;
+  margin: 40px auto 60px;
+  text-align: center;
+}
+.dress-intro .reassure {
+  font-style: italic;
+  color: var(--gold);
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.dress-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 36px;
+}
+@media (max-width: 900px) { .dress-grid { grid-template-columns: 1fr; } }
+
+.dress-card {
+  background: rgba(243, 234, 212, 0.04);
+  border: 1px solid rgba(243, 234, 212, 0.12);
+  padding: 32px 26px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.dress-card:hover {
+  border-color: rgba(201, 162, 74, 0.4);
+  background: rgba(243, 234, 212, 0.07);
+  transform: translateY(-3px);
+}
+
+.dress-card-icon {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 16px;
+  color: var(--coral);
+}
+.dress-card h3 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--pearl);
+  margin-bottom: 4px;
+  line-height: 1.1;
+}
+.dress-card .h-es {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 15px;
+  color: var(--mute);
+  margin-bottom: 18px;
+}
+.dress-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.dress-card li {
+  padding: 8px 0;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--pearl-soft);
+  border-bottom: 1px solid rgba(243, 234, 212, 0.06);
+}
+.dress-card li:last-child { border-bottom: none; }
+.dress-card li .es {
+  display: block;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 13px;
+  color: var(--mute);
+  margin-top: 2px;
+}
+
+/* Color swatch row */
+.color-swatches {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+.swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 11px;
+  color: var(--mute);
+  letter-spacing: 0.04em;
+  text-align: center;
+  flex: 1;
+  min-width: 50px;
+}
+.swatch-chip {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-bottom: 6px;
+  border: 1px solid rgba(243, 234, 212, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+.swatch-ocean   { background: linear-gradient(135deg, #0a2540, #1b7a8c); }
+.swatch-turq    { background: linear-gradient(135deg, #20b2aa, #40e0d0); }
+.swatch-royal   { background: linear-gradient(135deg, #1d3a8c, #2952cc); }
+.swatch-pearl   { background: linear-gradient(135deg, #f3ead4, #fffaf0); }
+.swatch-cream   { background: linear-gradient(135deg, #f5deb3, #faf0e6); }
+.swatch-gold    { background: linear-gradient(135deg, #c9a24a, #ddb86a); }
+
+/* Suggestions: "think of..." style cues */
+.dress-think {
+  margin-top: 48px;
+  padding: 36px 32px;
+  background: linear-gradient(180deg, rgba(201, 162, 74, 0.06), rgba(232, 130, 107, 0.04));
+  border-left: 3px solid var(--gold);
+  border-radius: 0;
+}
+.dress-think h4 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--pearl);
+  margin-bottom: 6px;
+}
+.dress-think h4 .es {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--mute);
+  margin-left: 8px;
+}
+.dress-think-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+}
+@media (max-width: 720px) { .dress-think-items { grid-template-columns: 1fr; } }
+.dress-think-item {
+  padding: 12px 0;
+}
+.dress-think-item .label {
+  font-style: italic;
+  color: var(--coral);
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+.dress-think-item .text {
+  color: var(--pearl-soft);
+  font-size: 16px;
+  line-height: 1.4;
+}
+.dress-think-item .es {
+  display: block;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 13px;
+  color: var(--mute);
+  margin-top: 2px;
+}
+
+/* "Avoid" footer in dress section */
+.dress-avoid {
+  margin-top: 28px;
+  padding: 20px 24px;
+  border: 1px dashed rgba(232, 130, 107, 0.35);
+  background: rgba(232, 130, 107, 0.03);
+  font-size: 15px;
+  color: var(--pearl-soft);
+  text-align: center;
+}
+.dress-avoid strong { color: var(--coral); font-weight: 600; letter-spacing: 0.02em; }
+.dress-avoid .es {
+  display: block;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 13px;
+  color: var(--mute);
+  margin-top: 4px;
+}
+
+/* Reassurance closing note */
+.dress-warmth {
+  margin-top: 24px;
+  text-align: center;
+  color: var(--gold);
+  font-style: italic;
+  font-size: 16px;
+}
+.dress-warmth .es {
+  display: block;
+  color: var(--mute);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* ============================================================
    SEATING TIERS
    ============================================================ */
 .tiers { background: linear-gradient(180deg, transparent, rgba(10, 37, 64, 0.5), transparent); }
@@ -933,6 +1186,173 @@ h2.section-title .es {
         <p>Hear directly from APS scholars whose journeys reveal the difference your support makes.</p>
       </div>
     </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FEATURED VIDEOS — one English clip, one Spanish clip
+     YOUTUBE EMBED VERSION
+     NOTE: each video must be set to Public or Unlisted (not Private)
+           on YouTube, or guests won't be able to watch it.
+     To swap a video, replace the ID in the src below — it's the part
+     after  youtu.be/  in your share link.
+     ============================================================ -->
+<section class="section videos">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <div class="eyebrow">A Closer Look · Una Mirada Más Cercana</div>
+      <h2 class="section-title">Watch &amp; Celebrate<span class="es">Mira y Celebra</span></h2>
+    </div>
+
+    <div class="video-grid">
+      <!-- English video (YouTube) -->
+      <div class="video-card reveal">
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/fRXO6Rz3eVc"
+            title="An Ocean of Opportunities — English"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+        <div class="video-label">In English<span class="es">En Inglés</span></div>
+      </div>
+
+      <!-- Spanish video (YouTube) -->
+      <div class="video-card reveal">
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/imq07z7E2d0"
+            title="Un Océano de Oportunidades — Español"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+        <div class="video-label">En Español<span class="es">In Spanish</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     DRESS CODE
+     EDIT: copy, swatches, examples, avoid list
+     ============================================================ -->
+<section class="section dress-code" id="dress-code">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;">
+      <div class="eyebrow">What to Wear · Qué Vestir</div>
+      <h2 class="section-title">Dress Code: Summer Elegant<span class="es">Código de Vestimenta: Elegante de Verano</span></h2>
+    </div>
+
+    <div class="dress-intro reveal">
+      <p class="lede">
+        We're thinking of you and the Phoenix heat. We want you to be comfortable and look beautiful — dress elegant, light, and with a touch of the sea.
+      </p>
+      <p class="lede es">
+        Pensamos en ti y en el calor de Phoenix. Queremos que estés cómodo y te veas hermoso — vístete elegante, fresco y con un toque de mar.
+      </p>
+      <p class="reassure">
+        You don't need to buy anything new — anything elegant and light from your closet works.<br>
+        <span style="color: var(--mute); font-size: 14px;">No necesitas comprar nada nuevo — lo que tengas en tu clóset que sea elegante y fresco es perfecto.</span>
+      </p>
+    </div>
+
+    <div class="dress-grid">
+
+      <!-- Colors card -->
+      <div class="dress-card reveal">
+        <svg class="dress-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="6" cy="9" r="2"/>
+          <circle cx="18" cy="9" r="2"/>
+          <circle cx="8" cy="17" r="2"/>
+          <circle cx="16" cy="17" r="2"/>
+        </svg>
+        <h3>Colors</h3>
+        <div class="h-es">Colores</div>
+        <ul>
+          <li>Ocean tones — royal blue, turquoise, navy<span class="es">Tonos del mar — azul rey, turquesa, azul marino</span></li>
+          <li>Soft neutrals — white, cream, beige, soft gold<span class="es">Neutros suaves — blanco, crema, beige, dorado suave</span></li>
+          <li>Pearls or subtle shimmer<span class="es">Perlas o brillos discretos</span></li>
+        </ul>
+        <div class="color-swatches">
+          <div class="swatch"><div class="swatch-chip swatch-royal"></div>Royal</div>
+          <div class="swatch"><div class="swatch-chip swatch-turq"></div>Turquoise</div>
+          <div class="swatch"><div class="swatch-chip swatch-ocean"></div>Navy</div>
+          <div class="swatch"><div class="swatch-chip swatch-pearl"></div>Pearl</div>
+          <div class="swatch"><div class="swatch-chip swatch-cream"></div>Cream</div>
+          <div class="swatch"><div class="swatch-chip swatch-gold"></div>Gold</div>
+        </div>
+      </div>
+
+      <!-- Fabrics card -->
+      <div class="dress-card reveal">
+        <svg class="dress-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M3 6c3 3 6 3 9 0s6-3 9 0"/>
+          <path d="M3 12c3 3 6 3 9 0s6-3 9 0"/>
+          <path d="M3 18c3 3 6 3 9 0s6-3 9 0"/>
+        </svg>
+        <h3>Fabrics</h3>
+        <div class="h-es">Telas</div>
+        <ul>
+          <li>Light and breathable for warm weather<span class="es">Frescas y ligeras para el clima caluroso</span></li>
+          <li>Linen, cotton, chiffon, gauze<span class="es">Lino, algodón, chiffon, gasa</span></li>
+          <li>Soft drape, comfortable movement<span class="es">Caída suave, movimiento cómodo</span></li>
+        </ul>
+      </div>
+
+      <!-- Style card (ladies + gentlemen) -->
+      <div class="dress-card reveal">
+        <svg class="dress-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <circle cx="12" cy="6" r="3"/>
+          <path d="M5 21c0-4 3-7 7-7s7 3 7 7"/>
+          <path d="M9 12l3 2 3-2"/>
+        </svg>
+        <h3>Style</h3>
+        <div class="h-es">Estilo</div>
+        <ul>
+          <li><strong>Ladies:</strong> Long or midi dress, elegant blouse with skirt or pants<span class="es"><strong>Damas:</strong> Vestido largo o midi, blusa elegante con falda o pantalón</span></li>
+          <li><strong>Gentlemen:</strong> Dress shirt (with or without jacket), dress pants. Tie optional.<span class="es"><strong>Caballeros:</strong> Camisa de vestir (con o sin saco), pantalón de vestir. Corbata opcional.</span></li>
+          <li>Rooftop venue — comfortable heels or elegant sandals<span class="es">Terraza — tacones cómodos o sandalias elegantes</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Think of it like... -->
+    <div class="dress-think reveal">
+      <h4>Think of it like… <span class="es">Imagínalo como…</span></h4>
+      <div class="dress-think-items">
+        <div class="dress-think-item">
+          <div class="label">A beach wedding</div>
+          <div class="text">Elegant, but breathing room for the heat.<span class="es">Una boda en la playa — elegante pero cómodo en el calor.</span></div>
+        </div>
+        <div class="dress-think-item">
+          <div class="label">A coastal dinner</div>
+          <div class="text">Refined, sea-toned, summery.<span class="es">Una cena costera — refinada, con tonos del mar.</span></div>
+        </div>
+        <div class="dress-think-item">
+          <div class="label">An upscale evening out</div>
+          <div class="text">Polished, put-together, comfortable.<span class="es">Una noche elegante — pulida y cómoda.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Avoid -->
+    <div class="dress-avoid reveal">
+      <strong>Please avoid:</strong> shorts, beach sandals, athletic wear, very low necklines, or revealing clothing.
+      <span class="es"><strong>Por favor evitar:</strong> shorts, sandalias de playa, ropa deportiva, escotes muy pronunciados o ropa muy reveladora.</span>
+    </div>
+
+    <!-- Warm close -->
+    <div class="dress-warmth reveal">
+      Questions about what to wear? We're happy to help — just reach out.
+      <span class="es">¿Preguntas sobre qué vestir? Con gusto te ayudamos — escríbenos.</span>
+    </div>
+
   </div>
 </section>
 
